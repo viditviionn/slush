@@ -19,4 +19,5 @@ export const images = {
   calender: require('../../assets/images/calender.png'),
   ticketHeaderImage: require('../../assets/images/ticketHeaderImage.png'),
   ticketBookedImage: require('../../assets/images/ticketBookedImage.png'),
+  Rectangle: require('../../assets/images/Rectangle.png'),
 };

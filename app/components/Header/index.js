@@ -4,7 +4,7 @@ import React, {useContext} from 'react';
 import {Text, Image, View, TouchableOpacity, StatusBar} from 'react-native';
 import styles from './styles';
 import {images} from '../../assets/images';
-import {Color} from '../utils/GlobalStyles';
+import {Color, normalize} from '../utils/GlobalStyles';
 const Header = props => {
   const {
     HeaderText,
@@ -47,6 +47,7 @@ const Header = props => {
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
+            marginTop: normalize(10),
           }}>
           <Image
             style={[
@@ -63,7 +64,7 @@ const Header = props => {
         <View
           style={{
             flex: 4,
-            alignItems: 'center'
+            alignItems: 'center',
           }}>
           <Text style={[styles.MainHeadTxt, MainHeadStyle]}>{HeaderText}</Text>
         </View>

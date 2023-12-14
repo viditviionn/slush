@@ -62,7 +62,7 @@ const DashboardView = (props: any) => {
           <FlatList
             data={popularEventData}
             contentContainerStyle={{width: '80%'}}
-            horizontal
+            // horizontal
             renderItem={({item}: any) => (
               <UpcomingEventCard
                 item={item}
@@ -83,7 +83,7 @@ const DashboardView = (props: any) => {
           <FlatList
             data={upcomingEventData}
             contentContainerStyle={{width: '80%'}}
-            horizontal
+            // horizontal
             renderItem={({item}: any) => (
               <UpcomingEventCard
                 item={item}

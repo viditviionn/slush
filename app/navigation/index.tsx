@@ -7,6 +7,8 @@ import LoginScreen from '../views/Authentication/Login';
 import Dashboard from '../views/Dashboard';
 import ViewTickets from '../views/TicketManagement/ViewTickets';
 import BookTickets from '../views/TicketManagement/BookTickets';
+import WaitingRoom from '../views/WaitingRoom';
+import VideoCall from '../views/VideoCall';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,6 +39,16 @@ const RootNavigation = () => {
         <Stack.Screen
           name="BookTickets"
           component={BookTickets}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="WaitingRoom"
+          component={WaitingRoom}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="VideoCall"
+          component={VideoCall}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

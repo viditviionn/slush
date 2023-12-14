@@ -1,14 +1,15 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import {images} from '../../../../assets/images';
 import SlushInput from '../../../../components/SlushInput';
 import Header from '../../../../components/Header';
+import {normalize} from '../../../../components/utils/GlobalStyles';
 
 const LoginView = (props: any) => {
   const {loginParams, setloginParams, handleLoginPress} = props;
   return (
-    <View style={styles.loginView}>
+    <ScrollView style={styles.loginView}>
       <Header />
       <View style={styles.headingView}>
         <Image source={images.slushLogo} style={styles.logoimage} />
@@ -48,9 +49,11 @@ const LoginView = (props: any) => {
           secureTextEntry={true}
         />
       </View>
-      <TouchableOpacity style={{width: '50%'}} onPress={() => {}}>
-        <Text style={styles.forgotText}>Forgot Password?</Text>
-      </TouchableOpacity>
+      {/* <View style={{flex: 1}}> */}
+        <TouchableOpacity style={{width: '50%'}} onPress={() => {}}>
+          <Text style={styles.forgotText}>Forgot Password?</Text>
+        </TouchableOpacity>
+      {/* </View> */}
       <View style={styles.actionView}>
         <TouchableOpacity
           style={[styles.buttonTouch, styles.loginTouch]}
@@ -79,7 +82,7 @@ const LoginView = (props: any) => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

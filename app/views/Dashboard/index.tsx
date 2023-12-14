@@ -7,7 +7,7 @@ import {TIMESTAMPINSECONDS} from '../../components/utils/constants';
 
 const Dashboard = ({navigation}: any) => {
   const [upcomingEventData, setUpcomingEventData] = useState();
-  const [myEventData, setMyEventData] = useState();
+  const [myEventData, setMyEventData] = useState<any>();
   const [popularEventData, setPopularEventData] = useState();
   useEffect(() => {
     getEvents();
@@ -47,8 +47,16 @@ const Dashboard = ({navigation}: any) => {
     navigation.navigate('ViewTickets', {eventId: eventId});
   };
   const handleUpcomingEventPress = (eventId: any) => {
-    console.log(eventId);
-    navigation.navigate('BookTickets', {eventId: eventId});
+    const isEventPresent = myEventData.some(
+      (event: any) => event.eventId === eventId,
+    );
+    console.log('isEventPresent: ', isEventPresent);
+
+    if (isEventPresent) {
+      navigation.navigate('ViewTickets', {eventId: eventId});
+    } else {
+      navigation.navigate('BookTickets', {eventId: eventId});
+    }
   };
   return (
     <View

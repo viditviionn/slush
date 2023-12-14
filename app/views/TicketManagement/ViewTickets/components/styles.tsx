@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     // backgroundColor: 'red',
     flex: 1,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   buttonTouch: {
     paddingVertical: 8,
@@ -123,7 +123,13 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.BOLD,
     color: Color.colorWhite,
   },
-  loginTouch: {
+  disable: {
+    opacity: 0.5,
+  },
+  joinTouch: {
+    backgroundColor: Color.primaryBlue,
+  },
+  cancelTouch: {
     backgroundColor: Color.lightRed,
   },
 });

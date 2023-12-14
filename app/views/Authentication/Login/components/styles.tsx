@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
     // marginVertical: 10,
   },
   buttonTouch: {
-    paddingVertical: 15,
-    marginVertical: 30,
+    paddingVertical: 10,
+    // marginVertical: 30,
     margin: 5,
     alignItems: 'center',
     justifyContent: 'center',

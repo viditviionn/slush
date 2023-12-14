@@ -17,13 +17,13 @@ const BookTickets = ({navigation, route}: any) => {
 
   const handleYesPress = async () => {
     // Add your logic for 'Yes' button press here
-    console.log('eventId: ',typeof JSON.stringify(eventId));
+    console.log('eventId: ', typeof JSON.stringify(eventId));
     const params = {
       eventId: eventId,
     };
     const response = await apiService('POST', '/events/book', params);
     console.log('response: ', response);
-    if(response.status === 201) {
+    if (response.status === 201) {
       setTicketBookedModalVisible(true);
       setModalVisible(false);
     }
@@ -32,8 +32,8 @@ const BookTickets = ({navigation, route}: any) => {
     navigation.navigate('Dashboard');
   };
   const handleViewDeatailPress = () => {
-    // navigation.navigate('Dashboard');
     setTicketBookedModalVisible(false);
+    navigation.navigate('ViewTickets', {eventId: eventId});
   };
   const handleNoPress = () => {
     // Add your logic for 'No' button press here

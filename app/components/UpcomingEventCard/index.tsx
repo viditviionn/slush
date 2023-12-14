@@ -30,7 +30,7 @@ const UpcomingEventCard = (props: any) => {
           </View>
         </View>
         <Text style={styles.timeText}>{`Time: ${getFormattedDate(
-          item?.endsAt,
+          item?.startsAt,
           'time',
         )}`}</Text>
         <Text style={styles.timeText}>
