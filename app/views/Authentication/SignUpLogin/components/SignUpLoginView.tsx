@@ -1,6 +1,7 @@
 import {
   Image,
   Pressable,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -12,7 +13,7 @@ import styles from './styles';
 const SignUpLoginView = (props: any) => {
   const {handleLoginpress} = props;
   return (
-    <View style={styles.signUpLogin}>
+    <ScrollView style={styles.signUpLogin}>
       <View style={styles.imageView}>
         <Image
           style={{}}
@@ -33,7 +34,7 @@ const SignUpLoginView = (props: any) => {
           <Text style={styles.signUpText}>I’m new, sign me up</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

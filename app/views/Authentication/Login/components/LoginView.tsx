@@ -9,7 +9,7 @@ import {normalize} from '../../../../components/utils/GlobalStyles';
 const LoginView = (props: any) => {
   const {loginParams, setloginParams, handleLoginPress} = props;
   return (
-    <ScrollView style={styles.loginView}>
+    <ScrollView style={styles.loginView} showsVerticalScrollIndicator={false}>
       <Header />
       <View style={styles.headingView}>
         <Image source={images.slushLogo} style={styles.logoimage} />
