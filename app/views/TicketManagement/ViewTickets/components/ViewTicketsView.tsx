@@ -130,7 +130,7 @@ const ViewTicketsView = (props: any) => {
                 timeDifference / 1000 >= 960 && styles.disable,
               ]}
               onPress={() => handleJoinEventPress(detailData)}
-              // disabled={timeDifference / 1000 >= 960}
+              disabled={timeDifference / 1000 >= 960}
             >
               <Text style={styles.loginText}>Join Event</Text>
             </TouchableOpacity>

@@ -11,6 +11,7 @@ import styles from './styles';
 import {images} from '../../../assets/images';
 import MyEventCard from '../../../components/MyEventCard';
 import UpcomingEventCard from '../../../components/UpcomingEventCard';
+import EmptyComponent from '../../../components/EmptyComponent';
 
 const DashboardView = (props: any) => {
   const {
@@ -45,6 +46,9 @@ const DashboardView = (props: any) => {
                   handleMyEventPress={handleMyEventPress}
                 />
               )}
+              ListEmptyComponent={() => (
+                <EmptyComponent message={'No Events found'} />
+              )}
               horizontal
               showsHorizontalScrollIndicator={false}
             />
@@ -69,6 +73,9 @@ const DashboardView = (props: any) => {
                 handleUpcomingEventPress={handleUpcomingEventPress}
               />
             )}
+            ListEmptyComponent={() => (
+              <EmptyComponent message={'No Events found'} />
+            )}
           />
         </View>
       </View>
@@ -89,6 +96,9 @@ const DashboardView = (props: any) => {
                 item={item}
                 handleUpcomingEventPress={handleUpcomingEventPress}
               />
+            )}
+            ListEmptyComponent={() => (
+              <EmptyComponent message={'No Events found'} />
             )}
           />
         </View>

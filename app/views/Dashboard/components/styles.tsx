@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   upcomingEventsView: {
     marginBottom: 20,
-    flex: 1
+    flex: 1,
   },
   upcomingEventsHeadingView: {
     width: '100%',

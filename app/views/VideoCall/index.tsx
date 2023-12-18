@@ -9,8 +9,8 @@ import {
   ChannelProfileType,
 } from 'react-native-agora';
 
-const appId = '123';
-const channelName = '123456';
+const appId = '2118';
+const channelName = '619-620-730';
 const token = '<--Insert authentication token here-->';
 const uid = 0;
 
@@ -67,6 +67,8 @@ const VideoCall = () => {
     }
   };
   const join = async () => {
+    console.log('isJoined: ', isJoined);
+    console.log('agoraEngineRef.current: ', agoraEngineRef.current);
     if (isJoined) {
       return;
     }
