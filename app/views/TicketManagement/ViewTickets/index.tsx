@@ -21,7 +21,7 @@ const ViewTickets = ({navigation, route}: any) => {
     }
   };
   const handleJoinEventPress = (data: any) => {
-    navigation.navigate('WaitingRoom', {eventData: data});
+    navigation.navigate('WaitingRoom', {eventData: data, eventId: eventId});
   };
   return (
     <ViewTicketsView

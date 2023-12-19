@@ -26,6 +26,7 @@ const LoginScreen = ({navigation}: any) => {
           JSON.stringify(response?.data?.data),
         );
         navigation.navigate('Dashboard');
+        // navigation.navigate('VideoCall');
       } else {
         Alert.alert(response.data.message);
       }

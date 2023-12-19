@@ -92,12 +92,29 @@ const WaitingView = (props: any) => {
           Waiting and not sure what to do? Check out the Event guide below.
         </Text>
         <View style={styles.avatarView}>
+          {eventData?.participants?.map((item: any, index: any) => {
+            console.log('item: ', item?.user?.profilePictures[0]?.key);
+            return (
+              <View key={index} style={styles.dashedCircle}>
+                {item?.user?.profilePictures[0]?.key && (
+                  <Image
+                    source={{uri: item?.user?.profilePictures[0]?.key}}
+                    style={{
+                      height: 50,
+                      width: 50,
+                      resizeMode: 'cover',
+                      zIndex: 100,
+                      borderRadius: 50,
+                    }}
+                  />
+                )}
+              </View>
+            );
+          })}
+          {/* <View style={styles.dashedCircle}></View>
           <View style={styles.dashedCircle}></View>
           <View style={styles.dashedCircle}></View>
-          <View style={styles.dashedCircle}></View>
-          <View style={styles.dashedCircle}></View>
-          <View style={styles.dashedCircle}></View>
-          <View style={styles.dashedCircle}></View>
+          <View style={styles.dashedCircle}></View> */}
         </View>
         <TouchableOpacity style={[styles.buttonTouch, styles.joinTouch]}>
           <Text style={styles.loginText}>Event Guide</Text>

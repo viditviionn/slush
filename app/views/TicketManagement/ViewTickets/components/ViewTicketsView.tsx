@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import styles from './styles';
 import Header from '../../../../components/Header';
@@ -90,7 +90,7 @@ const ViewTicketsView = (props: any) => {
     );
   });
   return (
-    <View style={styles.mainContainer}>
+    <ScrollView style={styles.mainContainer} showsVerticalScrollIndicator={false}>
       <Header HeaderText={'Ticket'} />
       <View style={styles.container}>
         <View style={styles.firstView}>
@@ -144,7 +144,7 @@ const ViewTicketsView = (props: any) => {
           </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

@@ -51,9 +51,9 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 50,
-    borderWidth: 2,
-    borderStyle: 'dashed',
-    borderColor: Color.primaryBlue,
+    // borderWidth: 2,
+    // borderStyle: 'dashed',
+    // borderColor: Color.primaryBlue,
     marginRight: 10,
   },
   avatarView: {

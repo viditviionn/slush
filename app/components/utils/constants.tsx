@@ -1,4 +1,5 @@
 export const BASEURL = 'http://208.87.132.237:3001/api/v1';
+export const GETBASEURL = 'http://208.87.132.237:3001';
 
 export const getFormattedDate = (time: any, formatType: any) => {
   var date = new Date(time * 1000); // Convert to milliseconds

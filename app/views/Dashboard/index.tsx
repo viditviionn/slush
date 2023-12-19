@@ -19,8 +19,6 @@ const Dashboard = ({navigation}: any) => {
         `/events?date=${TIMESTAMPINSECONDS}&distance=50000&events=upcoming&page=1&limit=100`,
         '',
       );
-      console.log('responseForUpcoming: ', responseForUpcoming);
-
       const responseForMyEvents = await apiService(
         'GET',
         `/events?date=${TIMESTAMPINSECONDS}&distance=50000&events=me&page=1&limit=100`,

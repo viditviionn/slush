@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
 
     backgroundColor: '#fff',
     marginBottom: 20,
+    flex: 1,
   },
   imageView: {},
   eventImageStyle: {

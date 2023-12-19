@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   digitContainer: {
     backgroundColor: Color.primaryBlue,
-    padding: 10,
+    padding: 8,
     borderRadius: 10,
 
     shadowColor: Color.calmBlack,

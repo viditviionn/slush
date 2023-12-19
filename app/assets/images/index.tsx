@@ -20,4 +20,9 @@ export const images = {
   ticketHeaderImage: require('../../assets/images/ticketHeaderImage.png'),
   ticketBookedImage: require('../../assets/images/ticketBookedImage.png'),
   Rectangle: require('../../assets/images/Rectangle.png'),
+  like: require('../../assets/images/like.png'),
+  endCall: require('../../assets/images/endCall.png'),
+  mic: require('../../assets/images/mic.png'),
+  video: require('../../assets/images/video.png'),
+  dislike: require('../../assets/images/dislike.png'),
 };

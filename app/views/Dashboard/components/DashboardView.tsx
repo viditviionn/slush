@@ -62,11 +62,11 @@ const DashboardView = (props: any) => {
             <Text style={styles.viewAllText}>View All</Text>
           </TouchableOpacity>
         </View>
-        <View style={{flexDirection: 'row'}}>
+        <View style={{flex: 1}}>
           <FlatList
             data={popularEventData}
-            contentContainerStyle={{width: '80%'}}
-            // horizontal
+            horizontal
+            showsHorizontalScrollIndicator={false}
             renderItem={({item}: any) => (
               <UpcomingEventCard
                 item={item}
@@ -86,11 +86,11 @@ const DashboardView = (props: any) => {
             <Text style={styles.viewAllText}>View All</Text>
           </TouchableOpacity>
         </View>
-        <View style={{flexDirection: 'row'}}>
+        <View style={{flex: 1}}>
           <FlatList
             data={upcomingEventData}
-            contentContainerStyle={{width: '80%'}}
-            // horizontal
+            horizontal
+            showsHorizontalScrollIndicator={false}
             renderItem={({item}: any) => (
               <UpcomingEventCard
                 item={item}

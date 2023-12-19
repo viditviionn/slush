@@ -3,8 +3,9 @@ import React from 'react';
 import WaitingView from './components/WaitingView';
 
 const WaitingRoom = ({navigation, route}: any) => {
+  const {eventId} = route?.params;
   const onVideoCall = () => {
-    navigation.navigate('VideoCall');
+    navigation.navigate('VideoCall', {eventId: eventId});
   };
   return (
     <WaitingView
