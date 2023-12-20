@@ -26,7 +26,6 @@ const appId = '0bb7571240b747a9809aa5eeb9774fe7';
 // const uid = 0;
 
 const VideoCall = ({navigation, route}: any) => {
-  console.log('route: ', route);
   const {eventId} = route?.params;
   const agoraEngineRef = useRef<IRtcEngine>(); // Agora engine instance
   const [isJoined, setIsJoined] = useState(false); // Indicates if the local user has joined the channel
@@ -54,31 +53,30 @@ const VideoCall = ({navigation, route}: any) => {
       `/events/${eventId}/fixtures`,
       '',
     );
-    console.log('responseForFixture: ', responseForFixture);
-
     if (responseForFixture?.status === 200) {
       const params = {
         uid: 0,
         channelName: responseForFixture?.data?.data[0]?.channelName,
       };
-      console.log(
-        'responseForFixture?.data[0]?.channelName: ',
-        responseForFixture?.data?.data[0]?.channelName,
-      );
-      console.log('params: ', params);
-
       const responseForRctToken = await apiGetService(
         'POST',
         `/rtc/token`,
         params,
       );
-      console.log('responseForRctToken: ', responseForRctToken.data);
-
       if (responseForRctToken) {
         join(
           responseForRctToken?.data?.data?.token,
           responseForFixture?.data?.data[0]?.channelName,
           0,
+        );
+        const params = {
+          participantId: responseForFixture?.data?.data[0]?.participantId,
+          status: 'JOINED',
+        };
+        const data = await apiService(
+          'PATCH',
+          `/events/${eventId}/fixtures`,
+          params,
         );
       }
     }
@@ -124,8 +122,6 @@ const VideoCall = ({navigation, route}: any) => {
     }
   };
   const join = async (token: any, channelName: any, uid: any) => {
-    console.log('isJoined: ', isJoined);
-    console.log('agoraEngineRef.current: ', agoraEngineRef.current);
     if (isJoined) {
       return;
     }

@@ -8,8 +8,11 @@ import {TIMESTAMPINSECONDS} from '../../components/utils/constants';
 const Dashboard = ({navigation}: any) => {
   const [upcomingEventData, setUpcomingEventData] = useState();
   const [myEventData, setMyEventData] = useState<any>();
+  const [nextEvent, setNextEvent] = useState<any>();
   const [popularEventData, setPopularEventData] = useState();
   const loadingRef = false;
+  const [timeDifference, setTimeDifference] = useState<any>(0);
+
   useEffect(() => {
     getEvents();
   }, []);
@@ -35,6 +38,9 @@ const Dashboard = ({navigation}: any) => {
       }
       if (responseForMyEvents.status === 200) {
         setMyEventData(responseForMyEvents?.data?.data?.items);
+        if (responseForMyEvents?.data?.data?.items?.length > 0) {
+          setNextEvent(responseForMyEvents?.data?.data?.items[0]);
+        }
       }
       if (responseForPopularEvents.status === 200) {
         setPopularEventData(responseForPopularEvents?.data?.data?.items);
@@ -75,6 +81,9 @@ const Dashboard = ({navigation}: any) => {
         handleUpcomingEventPress={handleUpcomingEventPress}
         loadingRef={loadingRef}
         onRefresh={onRefresh}
+        timeDifference={timeDifference}
+        setTimeDifference={setTimeDifference}
+        nextEvent={nextEvent}
       />
     </View>
   );

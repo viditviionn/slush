@@ -6,7 +6,6 @@ import {getFormattedDate} from '../utils/constants';
 
 const MyEventCard = (props: any) => {
   const {item, handleMyEventPress} = props;
-  console.log('item: MyEventCard', item);
   return (
     <TouchableOpacity
       onPress={() => handleMyEventPress(item?.eventId)}

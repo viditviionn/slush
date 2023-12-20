@@ -1,5 +1,9 @@
 import {StyleSheet} from 'react-native';
-import {Color, FontFamily} from '../../../components/utils/GlobalStyles';
+import {
+  Color,
+  FontFamily,
+  normalize,
+} from '../../../components/utils/GlobalStyles';
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -65,6 +69,40 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: FontFamily.SEMI_BOLD,
     color: Color.calmBlack,
+  },
+  nextEventView: {
+    backgroundColor: Color.lightBlue,
+    borderRadius: 10,
+  },
+  nextEventHeadinText: {
+    fontSize: 20,
+    fontFamily: FontFamily.SEMI_BOLD,
+    color: Color.calmBlack,
+    textAlign: 'center',
+  },
+  countWrap: {},
+  nextEventButtonView: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  nextEventButton: {
+    width: normalize(140),
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    marginVertical: 10,
+    borderRadius: 10,
+  },
+  unableButton: {
+    backgroundColor: Color.calmBlack,
+  },
+  joinButton: {
+    backgroundColor: Color.primaryBlue
+  },
+  nextEventButtonText: {
+    fontSize: normalize(16),
+    fontFamily: FontFamily.SEMI_BOLD,
+    color: Color.colorWhite,
+    textAlign: 'center',
   },
 });
 
