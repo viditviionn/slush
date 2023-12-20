@@ -5,6 +5,7 @@ import {
   ScrollView,
   TouchableOpacity,
   FlatList,
+  RefreshControl
 } from 'react-native';
 import React from 'react';
 import styles from './styles';
@@ -21,13 +22,18 @@ const DashboardView = (props: any) => {
     popularEventData,
     handleMyEventPress,
     handleUpcomingEventPress,
+    loadingRef,
     timeDifference,
     setTimeDifference,
     nextEvent,
   } = props;
   // console.log('nextEvent: ', nextEvent);
   return (
-    <ScrollView contentContainerStyle={styles.mainContainer}>
+    <ScrollView contentContainerStyle={styles.mainContainer}
+    refreshControl={
+      <RefreshControl refreshing={loadingRef} onRefresh={() => props.onRefresh()}
+    />}
+    >
       <View style={styles.profileView}>
         <Image source={images.profileImage} style={styles.profileImage} />
         <View style={styles.nameView}>
