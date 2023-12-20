@@ -67,7 +67,8 @@ export const Color = {
   black: '#000',
   backgroundColor: '#FEFEFE',
   darkBlue: '#0F2C4C',
-  lightRed: "#FF5C5C"
+  lightRed: '#FF5C5C',
+  lightBlue: '#9CD1FF',
 };
 /* border radiuses */
 export const Border = {

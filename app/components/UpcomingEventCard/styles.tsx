@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Color, FontFamily} from '../utils/GlobalStyles';
+import {Color, FontFamily, normalize} from '../utils/GlobalStyles';
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -33,14 +33,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    width: normalize(230),
   },
   titleText: {
-    fontSize: 20,
+    fontSize: 16,
     fontFamily: FontFamily.BOLD,
     // color: Color.calmBlack,
   },
   locationText: {
-    fontSize: 20,
+    fontSize: 16,
     fontFamily: FontFamily.BOLD,
     // color: Color.calmBlack,
   },
@@ -53,9 +54,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
-  locationImage: {},
+  locationImage: {
+    height: 20,
+    width: 20,
+  },
   timeText: {
-    fontSize: 18,
+    fontSize: 15,
     fontFamily: FontFamily.SEMI_BOLD,
     // color: Color.calmBlack,
   },

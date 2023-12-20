@@ -8,9 +8,9 @@ export const getFormattedDate = (time: any, formatType: any) => {
     // Format time as "HH:mm"
     var hours = date.getHours();
     var minutes = date.getMinutes();
-    var formattedTime = `${hours < 10 ? '0' : ''}${hours}:${
-      minutes < 10 ? '0' : ''
-    }${minutes}`;
+    var formattedTime = `${hours < 10 ? '0' : ''}${
+      isNaN(hours) ? '00' : hours
+    }:${minutes < 10 ? '0' : ''}${isNaN(minutes) ? '00' : minutes}`;
     return formattedTime;
   } else if (formatType === 'date') {
     // Format date as "MMM DD, YYYY"
@@ -31,7 +31,9 @@ export const getFormattedDate = (time: any, formatType: any) => {
     var month = monthNames[date.getMonth()];
     var day = date.getDate();
     var year = date.getFullYear();
-    var formattedDate = `${month} ${day}, ${year}`;
+    var formattedDate = `${month ? month : ''} ${isNaN(day) ? '00' : day}, ${
+      isNaN(year) ? '0000' : year
+    }`;
     return formattedDate;
   } else {
     // Handle invalid formatType
