@@ -9,6 +9,7 @@ const Dashboard = ({navigation}: any) => {
   const [upcomingEventData, setUpcomingEventData] = useState();
   const [myEventData, setMyEventData] = useState<any>();
   const [popularEventData, setPopularEventData] = useState();
+  const loadingRef = false;
   useEffect(() => {
     getEvents();
   }, []);
@@ -58,6 +59,9 @@ const Dashboard = ({navigation}: any) => {
       navigation.navigate('BookTickets', {eventId: eventId});
     }
   };
+  const onRefresh = () => {
+     getEvents();
+  }
   return (
     <View
       style={{
@@ -69,6 +73,8 @@ const Dashboard = ({navigation}: any) => {
         popularEventData={popularEventData}
         handleMyEventPress={handleMyEventPress}
         handleUpcomingEventPress={handleUpcomingEventPress}
+        loadingRef={loadingRef}
+        onRefresh={onRefresh}
       />
     </View>
   );

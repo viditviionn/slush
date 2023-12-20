@@ -1,4 +1,4 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import React from 'react';
 import Header from '../../../../components/Header';
 import styles from './styles';
@@ -20,7 +20,7 @@ const BookTicketsView = (props: any) => {
     handleViewDeatailPress,
   } = props;
   return (
-    <View style={styles.mainContainer}>
+    <ScrollView style={styles.mainContainer}>
       {/* <Header HeaderText={'Ticket'} /> */}
       <View style={styles.container}>
         <View style={styles.firstView}>
@@ -93,7 +93,7 @@ const BookTicketsView = (props: any) => {
           handleViewDeatailPress={handleViewDeatailPress}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
