@@ -25,6 +25,7 @@ const DashboardView = (props: any) => {
     setTimeDifference,
     nextEvent,
   } = props;
+  // console.log('nextEvent: ', nextEvent);
   return (
     <ScrollView contentContainerStyle={styles.mainContainer}>
       <View style={styles.profileView}>
@@ -38,26 +39,29 @@ const DashboardView = (props: any) => {
         <Image source={images.location} style={styles.locationImage} />
         <Text style={styles.locationText}>London</Text>
       </View> */}
-      <View style={styles.nextEventView}>
-        <Text style={styles.nextEventHeadinText}>
-          Your next event begins in..
-        </Text>
-        <View style={styles.countWrap}>
-          <CountView
-            startsAt={nextEvent?.startsAt}
-            setTimeDifference={setTimeDifference}
-          />
+      {nextEvent && (
+        <View style={styles.nextEventView}>
+          <Text style={styles.nextEventHeadinText}>
+            Your next event begins in..
+          </Text>
+          <View style={styles.countWrap}>
+            <CountView
+              startsAt={nextEvent?.startsAt}
+              setTimeDifference={setTimeDifference}
+            />
+          </View>
+          <View style={styles.nextEventButtonView}>
+            <TouchableOpacity
+              style={[styles.nextEventButton, styles.unableButton]}>
+              <Text style={styles.nextEventButtonText}>Unable to attend</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.nextEventButton, styles.joinButton]}>
+              <Text style={styles.nextEventButtonText}>Join</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.nextEventButtonView}>
-          <TouchableOpacity
-            style={[styles.nextEventButton, styles.unableButton]}>
-            <Text style={styles.nextEventButtonText}>Unable to attend</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.nextEventButton, styles.joinButton]}>
-            <Text style={styles.nextEventButtonText}>Join</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      )}
       <View style={styles.myEventsView}>
         <View style={styles.myEventHeading}>
           <Text style={styles.headingText}>My Events</Text>

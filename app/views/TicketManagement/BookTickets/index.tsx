@@ -1,5 +1,5 @@
 import {View, Text} from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import BookTicketsView from './components/BookTicketsView';
 import {apiService} from '../../../components/utils/apiService';
 
@@ -9,8 +9,23 @@ const BookTickets = ({navigation, route}: any) => {
   const [isTicketBookedModalVisible, setTicketBookedModalVisible] =
     useState(false);
 
+  const [detailData, setdetailData] = useState();
+  useEffect(() => {
+    getEventDetail();
+  }, []);
+  const getEventDetail = async () => {
+    try {
+      const response = await apiService('GET', `/events/${eventId}`, '');
+      console.log('response: ', response?.data);
+      if (response?.status === 200) {
+        setdetailData(response?.data?.data);
+      }
+    } catch (error) {
+      console.log('error: ', error);
+    }
+  };
+
   const toggleModal = () => {
-    console.log('dasdas');
     setModalVisible(!isModalVisible);
     setTicketBookedModalVisible(!isTicketBookedModalVisible);
   };
@@ -56,6 +71,7 @@ const BookTickets = ({navigation, route}: any) => {
       setTicketBookedModalVisible={setTicketBookedModalVisible}
       handleHomePress={handleHomePress}
       handleViewDeatailPress={handleViewDeatailPress}
+      detailData={detailData}
     />
   );
 };

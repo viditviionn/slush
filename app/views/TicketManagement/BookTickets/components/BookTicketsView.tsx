@@ -1,4 +1,4 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import React from 'react';
 import Header from '../../../../components/Header';
 import styles from './styles';
@@ -18,9 +18,10 @@ const BookTicketsView = (props: any) => {
     setTicketBookedModalVisible,
     handleHomePress,
     handleViewDeatailPress,
+    detailData,
   } = props;
   return (
-    <View style={styles.mainContainer}>
+    <ScrollView style={styles.mainContainer}>
       {/* <Header HeaderText={'Ticket'} /> */}
       <View style={styles.container}>
         <View style={styles.firstView}>
@@ -32,34 +33,30 @@ const BookTicketsView = (props: any) => {
         <View style={styles.secondView}>
           <View style={styles.descView}>
             <View style={styles.titleView}>
-              <Text style={styles.titletext}>Upto 5 dates</Text>
-              <Text style={styles.typeText}>FREE</Text>
+              <Text style={styles.titletext}>{detailData?.title}</Text>
+              <Text style={styles.typeText}>
+                {detailData?.isFree ? 'FREE' : 'PAID'}
+              </Text>
             </View>
-            <Text style={styles.locationText}>London</Text>
+            <Text style={styles.locationText}>{detailData?.address}</Text>
             <View style={styles.timeView}>
               <View style={styles.dateView}>
                 <Image source={images.calender} style={styles.timeIcon} />
                 <Text style={styles.dateText}>
-                  {getFormattedDate(123123123123, 'date')}
+                  {getFormattedDate(detailData?.startsAt, 'date')}
                 </Text>
               </View>
               <View style={styles.dateView}>
                 <Image source={images.clock} style={styles.timeIcon} />
                 <Text style={styles.dateText}>
-                  {getFormattedDate(123123123123, 'time')}
+                  {getFormattedDate(detailData?.startsAt, 'time')}
                 </Text>
               </View>
             </View>
           </View>
           <View style={styles.detailView}>
             <Text style={styles.HeadingText}>Event Detail</Text>
-            <Text style={styles.detailText}>
-              You will virtually meet up to 10 different people. Each date will
-              last 3 minutes and you will have an opportunity to decide whether
-              or not you like the person. If you both like eachother, you will
-              match at the end of the session and can continue your
-              conversation. Most importantly, have fun!
-            </Text>
+            <Text style={styles.detailText}>{detailData?.description}</Text>
           </View>
           <View style={styles.participantsView}>
             <Text style={styles.HeadingText}>Event Participants</Text>
@@ -93,7 +90,7 @@ const BookTicketsView = (props: any) => {
           handleViewDeatailPress={handleViewDeatailPress}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

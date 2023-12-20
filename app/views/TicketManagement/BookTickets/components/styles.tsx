@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
   },
   participantsView: {
     flex: 1,
+    marginVertical: 20,
   },
   buttonTouch: {
     paddingVertical: 8,
