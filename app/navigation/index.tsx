@@ -17,6 +17,7 @@ import DummyScreen4 from '../views/DummyScreens/DummyScreens4';
 import MyTabScreen from './MyTab';
 import {createStackNavigator} from '@react-navigation/stack';
 import EventEndedScreen from '../views/PostEventManagement/EventEndedScreen';
+import MatchScreen from '../views/PostEventManagement/MatchScreen';
 
 const Stack = createStackNavigator();
 const HomeStack = createStackNavigator();
@@ -96,7 +97,6 @@ const RootNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        
         <Stack.Screen
           name="SignUpLogin"
           component={SignUpLogin}
@@ -112,11 +112,16 @@ const RootNavigation = () => {
           component={MyTabBar}
           options={{headerShown: false}}
         />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="EventEndedScreen"
           component={EventEndedScreen}
           options={{headerShown: false}}
-        />
+        /> */}
+        {/* <Stack.Screen
+          name="MatchScreen"
+          component={MatchScreen}
+          options={{headerShown: false}}
+        /> */}
         {/*<Stack.Screen
           name="ViewTickets"
           component={ViewTickets}

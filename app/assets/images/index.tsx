@@ -31,4 +31,6 @@ export const images = {
   user: require('../../assets/images/user.png'),
   headerImage1: require('../../assets/images/headerImage1.png'),
   headerImage2: require('../../assets/images/headerImage2.png'),
+  heartFill: require('../../assets/images/heartFill.png'),
+  tick: require('../../assets/images/tick.png'),
 };
