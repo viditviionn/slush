@@ -142,7 +142,6 @@ const VideoCall = ({navigation, route}: any) => {
       agoraEngineRef.current?.leaveChannel();
       setRemoteUid(0);
       setIsJoined(false);
-      showMessage('You left the channel');
       navigation.replace('Dashboard');
     } catch (e) {
       console.log(e);

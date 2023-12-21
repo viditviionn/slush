@@ -16,13 +16,13 @@ const MyEventCard = (props: any) => {
         <View style={styles.dateView}>
           <Image source={images.calender} style={styles.timeIcon} />
           <Text style={styles.dateText}>
-            {getFormattedDate(item?.endsAt, 'date')}
+            {getFormattedDate(item?.startsAt, 'date')}
           </Text>
         </View>
         <View style={styles.dateView}>
           <Image source={images.clock} style={styles.timeIcon} />
           <Text style={styles.dateText}>
-            {getFormattedDate(item?.endsAt, 'time')}
+            {getFormattedDate(item?.startsAt, 'time')}
           </Text>
         </View>
       </View>

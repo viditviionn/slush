@@ -9,13 +9,94 @@ import ViewTickets from '../views/TicketManagement/ViewTickets';
 import BookTickets from '../views/TicketManagement/BookTickets';
 import WaitingRoom from '../views/WaitingRoom';
 import VideoCall from '../views/VideoCall';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import DummyScreen1 from '../views/DummyScreens/DummyScreens1';
+import Dummyscreen2 from '../views/DummyScreens/DummyScreens2';
+import DummyScreen3 from '../views/DummyScreens/DummyScreens3';
+import DummyScreen4 from '../views/DummyScreens/DummyScreens4';
+import MyTabScreen from './MyTab';
+import {createStackNavigator} from '@react-navigation/stack';
+import EventEndedScreen from '../views/PostEventManagement/EventEndedScreen';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
+const HomeStack = createStackNavigator();
+// const Stack = createNativeStackNavigator();
+// const HomeStack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const HomeScreens = () => {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen
+        name="Home"
+        component={Dashboard}
+        options={{headerShown: false}}
+      />
+      <HomeStack.Screen
+        name="ViewTickets"
+        component={ViewTickets}
+        options={{headerShown: false}}
+      />
+      <HomeStack.Screen
+        name="BookTickets"
+        component={BookTickets}
+        options={{headerShown: false}}
+      />
+      <HomeStack.Screen
+        name="WaitingRoom"
+        component={WaitingRoom}
+        options={{headerShown: false}}
+      />
+      <HomeStack.Screen
+        name="VideoCall"
+        component={VideoCall}
+        options={{headerShown: false}}
+      />
+      {/* <HomeStack.Screen
+        name="EventEndedScreen"
+        component={EventEndedScreen}
+        options={{headerShown: false}}
+      /> */}
+    </HomeStack.Navigator>
+  );
+};
+
+function MyTabBar() {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+      tabBar={props => <MyTabScreen {...props} />}>
+      <Tab.Screen
+        name="HomeScreen"
+        component={HomeScreens}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="DummyScreen1"
+        component={DummyScreen1}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="DummyScreen2"
+        component={Dummyscreen2}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="DummyScreen3"
+        component={DummyScreen3}
+        options={{headerShown: false}}
+      />
+    </Tab.Navigator>
+  );
+}
 
 const RootNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
+        
         <Stack.Screen
           name="SignUpLogin"
           component={SignUpLogin}
@@ -28,10 +109,15 @@ const RootNavigation = () => {
         />
         <Stack.Screen
           name="Dashboard"
-          component={Dashboard}
+          component={MyTabBar}
           options={{headerShown: false}}
         />
         <Stack.Screen
+          name="EventEndedScreen"
+          component={EventEndedScreen}
+          options={{headerShown: false}}
+        />
+        {/*<Stack.Screen
           name="ViewTickets"
           component={ViewTickets}
           options={{headerShown: false}}
@@ -50,7 +136,7 @@ const RootNavigation = () => {
           name="VideoCall"
           component={VideoCall}
           options={{headerShown: false}}
-        />
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

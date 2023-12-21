@@ -6,22 +6,59 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {RtcSurfaceView} from 'react-native-agora';
 import styles from './styles';
 import {images} from '../../../assets/images';
 
 const VideoCallView = (props: any) => {
   const {join, leave, isJoined, remoteUid, message} = props;
+  const CountdownTimer = () => {
+    // 3 minutes in seconds
+    const initialTime = 3 * 60;
+
+    // State to keep track of remaining time
+    const [timeLeft, setTimeLeft] = useState(initialTime);
+
+    useEffect(() => {
+      // Exit early when we reach 0
+      if (timeLeft === 0) {
+        leave();
+        return;
+      }
+
+      // Save interval id to clear the interval when the component unmounts
+      const intervalId = setInterval(() => {
+        setTimeLeft(timeLeft - 1);
+      }, 1000);
+
+      // Clear interval on re-render to avoid memory leaks
+      return () => clearInterval(intervalId);
+      // Add timeLeft as a dependency to re-run the effect when we update it
+    }, [timeLeft]);
+
+    return (
+      <View>
+        <Text style={styles.countText}>{formatTime(timeLeft)}</Text>
+      </View>
+    );
+  };
+
+  // Helper function to format time in MM:SS format
+  const formatTime = (time: any) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(
+      2,
+      '0',
+    )}`;
+  };
   return (
     <SafeAreaView style={styles.main}>
+      <View style={styles.timerView}>
+        <CountdownTimer />
+      </View>
       <View style={styles.btnContainer}>
-        {/* <Text onPress={join} style={styles.button}>
-          Join
-        </Text>
-        <Text onPress={leave} style={styles.button}>
-          Leave
-        </Text> */}
         <View style={styles.firstView}>
           <View style={[styles.likedislikeView, {backgroundColor: '#F61A00'}]}>
             <Image

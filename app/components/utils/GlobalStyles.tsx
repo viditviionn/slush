@@ -74,3 +74,5 @@ export const Color = {
 export const Border = {
   br_3xs: 10,
 };
+
+export const Isios = Platform.OS === 'ios'

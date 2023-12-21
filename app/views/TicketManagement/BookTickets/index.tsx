@@ -44,11 +44,12 @@ const BookTickets = ({navigation, route}: any) => {
     }
   };
   const handleHomePress = () => {
-    navigation.navigate('Dashboard');
+    setTicketBookedModalVisible(false);
+    navigation.replace('Dashboard');
   };
   const handleViewDeatailPress = () => {
     setTicketBookedModalVisible(false);
-    navigation.navigate('ViewTickets', {eventId: eventId});
+    navigation.replace('ViewTickets', {eventId: eventId});
   };
   const handleNoPress = () => {
     // Add your logic for 'No' button press here

@@ -1,4 +1,9 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import {
+  Color,
+  FontFamily,
+  normalize,
+} from '../../../components/utils/GlobalStyles';
 const {width, height} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
@@ -71,6 +76,21 @@ const styles = StyleSheet.create({
   secondViewImages: {
     height: 50,
     width: 50,
+  },
+  timerView: {
+    position: 'absolute',
+    top: normalize(100),
+    zIndex: 1000,
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    paddingVertical: 8,
+    paddingHorizontal: 20,
+    borderRadius: 10
+  },
+  countText: {
+    fontSize: 20,
+    fontFamily: FontFamily.SEMI_BOLD,
+    color: Color.calmBlack,
+    textAlign: 'center',
   },
 });
 

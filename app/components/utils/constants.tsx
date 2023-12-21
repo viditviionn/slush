@@ -43,3 +43,10 @@ export const getFormattedDate = (time: any, formatType: any) => {
 
 var currentDate = new Date();
 export const TIMESTAMPINSECONDS = Math.floor(currentDate.getTime() / 1000);
+
+export function isEmptyObj(obj: object) {
+  if (obj == null) {
+    return true;
+  }
+  return Object.keys(obj)?.length === 0 && obj.constructor === Object;
+}

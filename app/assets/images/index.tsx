@@ -25,4 +25,10 @@ export const images = {
   mic: require('../../assets/images/mic.png'),
   video: require('../../assets/images/video.png'),
   dislike: require('../../assets/images/dislike.png'),
+  house: require('../../assets/images/house.png'),
+  heart: require('../../assets/images/heart.png'),
+  chat: require('../../assets/images/chat.png'),
+  user: require('../../assets/images/user.png'),
+  headerImage1: require('../../assets/images/headerImage1.png'),
+  headerImage2: require('../../assets/images/headerImage2.png'),
 };

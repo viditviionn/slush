@@ -74,6 +74,11 @@ const styles = StyleSheet.create({
     backgroundColor: Color.lightBlue,
     borderRadius: 10,
   },
+  absoluteNextEventView: {
+    position: 'relative',
+    top: 100,
+    bottom: 0
+  },
   nextEventHeadinText: {
     fontSize: 20,
     fontFamily: FontFamily.SEMI_BOLD,
@@ -103,6 +108,9 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.SEMI_BOLD,
     color: Color.colorWhite,
     textAlign: 'center',
+  },
+  disable: {
+    opacity: 0.3,
   },
 });
 

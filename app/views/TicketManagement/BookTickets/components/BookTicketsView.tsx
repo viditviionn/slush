@@ -20,6 +20,7 @@ const BookTicketsView = (props: any) => {
     handleViewDeatailPress,
     detailData,
   } = props;
+  console.log('detailData: ', detailData);
   return (
     <ScrollView style={styles.mainContainer}>
       {/* <Header HeaderText={'Ticket'} /> */}
