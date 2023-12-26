@@ -23,7 +23,6 @@ const BookTicketsView = (props: any) => {
   console.log('detailData: ', detailData);
   return (
     <ScrollView style={styles.mainContainer}>
-      {/* <Header HeaderText={'Ticket'} /> */}
       <View style={styles.container}>
         <View style={styles.firstView}>
           <Image
