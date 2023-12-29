@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import {useNavigation} from '@react-navigation/native';
-import React, {useContext} from 'react';
+import React from 'react';
 import {Text, Image, View, TouchableOpacity, StatusBar} from 'react-native';
 import styles from './styles';
 import {images} from '../../assets/images';
