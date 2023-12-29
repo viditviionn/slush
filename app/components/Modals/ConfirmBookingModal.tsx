@@ -5,7 +5,6 @@ import {Color, FontFamily, FontSize} from '../utils/GlobalStyles';
 const ConfirmBoookingModal = (props: any) => {
   const {
     isModalVisible,
-    setModalVisible,
     toggleModal,
     handleYesPress,
     handleNoPress,
