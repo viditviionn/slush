@@ -4,7 +4,6 @@ import {
   Modal,
   TouchableOpacity,
   StyleSheet,
-  Dimensions,
   Image,
 } from 'react-native';
 import React from 'react';
