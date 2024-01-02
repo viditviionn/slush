@@ -4,7 +4,6 @@ import styles from './styles';
 import {images} from '../../../../assets/images';
 import SlushInput from '../../../../components/SlushInput';
 import Header from '../../../../components/Header';
-import {normalize} from '../../../../components/utils/GlobalStyles';
 
 const LoginView = (props: any) => {
   const {loginParams, setloginParams, handleLoginPress} = props;
