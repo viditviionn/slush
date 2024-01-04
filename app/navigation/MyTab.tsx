@@ -4,8 +4,6 @@ import {View, Text, TouchableOpacity, Image, SafeAreaView} from 'react-native';
 import {images} from '../assets/images';
 import {
   Color,
-  FontFamily,
-  FontSize,
   Isios,
 } from '../components/utils/GlobalStyles';
 
