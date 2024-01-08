@@ -8,9 +8,8 @@ import {
   RefreshControl,
   Animated,
 } from 'react-native';
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './styles';
-import {images} from '../../../assets/images';
 import MyEventCard from '../../../components/MyEventCard';
 import UpcomingEventCard from '../../../components/UpcomingEventCard';
 import EmptyComponent from '../../../components/EmptyComponent';
