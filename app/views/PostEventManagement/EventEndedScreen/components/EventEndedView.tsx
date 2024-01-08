@@ -1,8 +1,6 @@
 import {View, Text, ScrollView, Image, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {images} from '../../../../assets/images';
-import CountView from '../../../../components/CountView';
-import {getFormattedDate} from '../../../../components/utils/constants';
 import styles from './styles';
 import Header from '../../../../components/Header';
 import ReportModal from '../../../../components/Modals/ReportModal';
