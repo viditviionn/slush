@@ -8,7 +8,6 @@ import ReportModal from '../../../../components/Modals/ReportModal';
 const EventEndedView = (props: any) => {
   const {handleOptionPress, optionArray} = props;
   const [modalVisible, setModalVisible] = useState(true);
-
   return (
     <ScrollView
       style={styles.mainContainer}
