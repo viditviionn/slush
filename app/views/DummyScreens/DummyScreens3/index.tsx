@@ -4,7 +4,7 @@ import React from 'react'
 const DummyScreen3 = () => {
   return (
     <View>
-      <Text>DummyScreen3</Text>
+      <Text>DummyScreenthree</Text>
     </View>
   )
 }
