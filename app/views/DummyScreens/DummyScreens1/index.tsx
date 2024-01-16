@@ -5,7 +5,7 @@ const DummyScreen1 = () => {
   return (
     <View>
       <Text>DummyScreenOne</Text>
-    </View>
+    </View> 
   );
 };
 
