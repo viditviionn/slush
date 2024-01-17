@@ -9,8 +9,8 @@ import BookTickets from '../views/TicketManagement/BookTickets';
 import WaitingRoom from '../views/WaitingRoom';
 import VideoCall from '../views/VideoCall';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import DummyScreen1 from '../views/DummyScreens/DummyScreens1';
-import Dummyscreen2 from '../views/DummyScreens/DummyScreens2';
+import Matches from '../views/DummyScreens/Matches';
+import Messages from '../views/DummyScreens/Messages';
 import DummyScreen3 from '../views/DummyScreens/DummyScreens3';
 import DummyScreen4 from '../views/DummyScreens/DummyScreens4';
 import MyTabScreen from './MyTab';
@@ -74,13 +74,13 @@ function MyTabBar() {
         options={{headerShown: false}}
       />
       <Tab.Screen
-        name="DummyScreen1"
-        component={DummyScreen1}
+        name="Matches"
+        component={Matches}
         options={{headerShown: false}}
       />
       <Tab.Screen
         name="DummyScreen2"
-        component={Dummyscreen2}
+        component={Messages}
         options={{headerShown: false}}
       />
       <Tab.Screen

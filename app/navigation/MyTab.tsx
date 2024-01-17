@@ -9,7 +9,7 @@ import {
 
 const tabItems = [
   {label: 'HomeScreen', icon: images.house},
-  {label: 'DummyScreen1', icon: images.heart},
+  {label: 'Matches', icon: images.heart},
   {label: 'DummyScreen2', icon: images.chat},
   {label: 'DummyScreen3', icon: images.user},
 ];

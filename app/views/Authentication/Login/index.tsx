@@ -16,20 +16,20 @@ const LoginScreen = ({navigation}: any) => {
         'accessToken: ',
         response?.data?.data?.authenticate?.accessToken,
       );
-      if (response.status === 201) {
-        const userToken = response?.data?.data?.authenticate?.accessToken;
-        console.log('userToken: ', userToken);
-        await setHeader('token', userToken);
-        await AsyncStorage.setItem('userToken', userToken);
-        await AsyncStorage.setItem(
-          'userData',
-          JSON.stringify(response?.data?.data),
-        );
+      // if (response.status === 201) {
+      //   const userToken = response?.data?.data?.authenticate?.accessToken;
+      //   console.log('userToken: ', userToken);
+      //   await setHeader('token', userToken);
+      //   await AsyncStorage.setItem('userToken', userToken);
+      //   await AsyncStorage.setItem(
+      //     'userData',
+      //     JSON.stringify(response?.data?.data),
+      //   );
         navigation.navigate('Dashboard');
         // navigation.navigate('VideoCall');
-      } else {
-        Alert.alert(response.data.message);
-      }
+      // } else {
+      //   Alert.alert(response.data.message);
+      // }
     } catch (error) {
       console.log('error: ', error);
     }

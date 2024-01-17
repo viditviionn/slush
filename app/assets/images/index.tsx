@@ -33,4 +33,6 @@ export const images = {
   headerImage2: require('../../assets/images/headerImage2.png'),
   heartFill: require('../../assets/images/heartFill.png'),
   tick: require('../../assets/images/tick.png'),
+  noMatches: require('../../assets/images/noMatches.png'),
+  search: require('../../assets/images/search.png'),
 };
