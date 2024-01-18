@@ -4,7 +4,7 @@ import MessagesView from './components/MessagesView';
 
 const Messages = () => {
   return (
-    <View>
+    <View style={{flex: 1}}>
       <MessagesView />
     </View>
   );

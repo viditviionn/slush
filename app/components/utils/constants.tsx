@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export const BASEURL = 'http://208.87.132.237:3001/api/v1';
 export const GETBASEURL = 'http://208.87.132.237:3001';
 
@@ -50,3 +52,16 @@ export function isEmptyObj(obj: object) {
   }
   return Object.keys(obj)?.length === 0 && obj.constructor === Object;
 }
+
+export const formatMessageTime = (dateTime: any) => {
+  const now = moment();
+  const messageDate = moment(dateTime);
+
+  if (now.diff(messageDate, 'days') < 1) {
+    return messageDate.format('HH:mm'); // Same day: show time
+  } else if (now.diff(messageDate, 'days') === 1) {
+    return 'Yesterday'; // Yesterday
+  } else {
+    return messageDate.format('DD/MM/YYYY'); // Different day: show date
+  }
+};
