@@ -11,7 +11,7 @@ import VideoCall from '../views/VideoCall';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Matches from '../views/DummyScreens/Matches';
 import Messages from '../views/DummyScreens/Messages';
-import DummyScreen3 from '../views/DummyScreens/DummyScreens3';
+import ProfileScreen from '../views/DummyScreens/ProfileScreen';
 import DummyScreen4 from '../views/DummyScreens/DummyScreens4';
 import MyTabScreen from './MyTab';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -84,8 +84,8 @@ function MyTabBar() {
         options={{headerShown: false}}
       />
       <Tab.Screen
-        name="DummyScreen3"
-        component={DummyScreen3}
+        name="ProfileScreen"
+        component={ProfileScreen}
         options={{headerShown: false}}
       />
     </Tab.Navigator>
