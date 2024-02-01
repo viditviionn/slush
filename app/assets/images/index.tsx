@@ -35,4 +35,5 @@ export const images = {
   tick: require('../../assets/images/tick.png'),
   noMatches: require('../../assets/images/noMatches.png'),
   search: require('../../assets/images/search.png'),
+  flower: require('../../assets/images/flower.png'),
 };

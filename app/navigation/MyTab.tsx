@@ -11,7 +11,7 @@ const tabItems = [
   {label: 'HomeScreen', icon: images.house},
   {label: 'Matches', icon: images.heart},
   {label: 'DummyScreen2', icon: images.chat},
-  {label: 'DummyScreen3', icon: images.user},
+  {label: 'ProfileScreen', icon: images.user},
 ];
 
 const MyTabScreen = ({state, descriptors, navigation}: any) => {

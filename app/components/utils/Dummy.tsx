@@ -113,3 +113,5 @@ export const DUMMY_MESSAGE_DATA = [
     lastMessageTime: '2024-01-14T11:05:00Z',
   },
 ];
+
+export const DUMMY_INTERESTS = ['Running', 'Shopping', 'Travelling', 'Cooking', 'Playing Golf']
