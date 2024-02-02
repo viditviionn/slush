@@ -1,3 +1,14 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-native",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    // Include other relevant compiler options as needed
+  },
+  "include": [
+    "node_modules/react-native-agora/src/**/*.tsx",
+    // Include paths to other files or directories as needed
+  ]
 }
